@@ -113,7 +113,6 @@ def update_board(width, height, grid, colour, turns, flood_check)
   end
 end
 
-  
 def board(width, height, grid, colour, turns, flood_check)
   # Clears command prompt and generates board
   puts "\e[H\e[2J"
@@ -187,7 +186,7 @@ def get_height(height)
 end
     
 def main_menu(width, height, turns, scores)
-  puts "main menu"
+  puts "Main Menu"
   puts "s --> Start game"
   puts "c --> Change size"
   puts "q --> Quit game"
@@ -222,7 +221,6 @@ splash.write_center(-5, "Press the ENTER key to continue")
 splash.write_horizontal_pattern("><")
 splash.write_vertical_pattern("><")
 splash.splash
-puts ""
     
 # Variables
 colour = ""
@@ -234,9 +232,10 @@ width = 9
 height = 14
     
 # Main Program
+puts ""
+enterCheck = gets.chomp
 loop do
-  enterCheck = gets.chomp
-  if enterCheck == ""
+  if enterCheck == "" || colour == "quit"
     width, height = main_menu(width, height, turns, scores)
   end
   grid = get_board(width, height)
@@ -249,7 +248,7 @@ loop do
     if check_completion(width, height, grid, colour, turns, flood_check) == true then
       colour = board(width, height, grid, colour, turns, flood_check)
       update_board(width, height, grid, colour, turns, flood_check)
-      print "You have won after " + turns.to_s + " turns"
+      puts "You have won after " + turns.to_s + " turns"
       puts ""
       scores.push(turns)
       break
@@ -257,6 +256,7 @@ loop do
       if scores.length == 0
         turns = 0
       end
+      puts ""
       break
     end
   end
