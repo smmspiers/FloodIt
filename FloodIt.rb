@@ -213,14 +213,6 @@ def main_menu(width, height, turns, scores)
     main_menu(width, height, turns, scores)
   end
 end
-
-# Splash board configuration
-splash = ConsoleSplash.new(20, 40)
-splash.write_header("Welcome to Flood-It", "Sammy Spiers", "1.0")
-splash.write_center(-5, "Press the ENTER key to continue")
-splash.write_horizontal_pattern("><")
-splash.write_vertical_pattern("><")
-splash.splash
     
 # Variables
 colour = ""
@@ -230,9 +222,18 @@ scores = Array.new()
 flood_check = Array.new() {Array.new()}
 width = 9
 height = 14
+
+# Splash board
+splash = ConsoleSplash.new(20, 40)
+splash.write_header("Welcome to Flood-It", "Sammy Spiers", "1.0")
+splash.write_center(-5, "Press the ENTER key to continue")
+splash.write_horizontal_pattern("><")
+splash.write_vertical_pattern("><")
+puts "\e[H\e[2J"
+splash.splash
+puts ""
     
 # Main Program
-puts ""
 enterCheck = gets.chomp
 loop do
   if enterCheck == "" || colour == "quit"
