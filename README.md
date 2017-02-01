@@ -6,7 +6,7 @@ A simple game which I did as a project as part of my degree.
 There is a grid of randomly arranged colours red, green, blue, yellow, magenta and cyan. The objective is to flood the entire grid of the one colour in the lest amount of turns possible.
 
 ## How to Run?
-Enter the following:
+Go into the the folder of where FlooIt.rb is saved and enter the following in terminal
 ```
 ruby FloodIt.rb
 ```
