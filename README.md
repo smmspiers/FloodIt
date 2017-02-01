@@ -10,13 +10,10 @@ Enter the following:
 ```
 ruby FloodIt.rb
 ```
+Requires two gems: Colorize and Console_Spalsh.
 
 ## How to play?
 Use the keys of the iniitials of the colours to change the colour of the first square, and any neighbouring squares of the same colour.
 
 ## What does the game look like?
 ![Screen shot](/screenshot.png)
-
-Format: ![Alt Text](url)
-
-Requires two gems: Colorize and Console_Spalsh.
